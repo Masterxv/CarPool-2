@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".DriverLoginActivity">
+    tools:context=".activities.DriverLoginActivity">
 
     <EditText
         android:layout_width="300dp"
@@ -60,7 +60,8 @@
         android:background="@drawable/roundbutton_two"
         android:text="Login"
         android:textColor="#ffffff"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:onClick="onClickLogin"/>
 
 
     <LinearLayout

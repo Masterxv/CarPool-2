@@ -1,9 +1,11 @@
-package com.example.ukeje.carpool;
+package com.example.ukeje.carpool.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.ukeje.carpool.R;
 
 public class LoginSelectorActivity extends AppCompatActivity {
 

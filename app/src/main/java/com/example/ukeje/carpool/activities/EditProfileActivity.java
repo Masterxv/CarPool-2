@@ -1,13 +1,15 @@
-package com.example.ukeje.carpool;
+package com.example.ukeje.carpool.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class PassengerDashboardActivity extends AppCompatActivity {
+import com.example.ukeje.carpool.R;
+
+public class EditProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_passenger_dashboard);
+        setContentView(R.layout.activity_edit_profile);
     }
 }

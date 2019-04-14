@@ -1,15 +1,12 @@
-package com.example.ukeje.carpool;
+package com.example.ukeje.carpool.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.Statement;
+import com.example.ukeje.carpool.R;
+
 
 public class DriverLoginActivity extends AppCompatActivity {
 
@@ -22,9 +19,15 @@ public class DriverLoginActivity extends AppCompatActivity {
 
     public void onClickCreateAccount(View view){
 
-        Intent intent = new Intent(this, DriverRegistrationActivity.class);
+        Intent intent = new Intent(this, EditProfileActivity.class);
         startActivity(intent);
 
+    }
+
+    public void onClickLogin(View view){
+
+        Intent dashBoardIntent = new Intent(this, DashboardActivity.class);
+        startActivity(dashBoardIntent);
     }
 
 }

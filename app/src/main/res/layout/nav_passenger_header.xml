@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="260dp"
-    android:background="#d6d2d2"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#101010"
     android:padding="16dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/profile_pic"/>
+        android:src="@drawable/profile_pic"
+        android:id="@+id/profile_icon"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/details_layout"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="JOHN DOE"
-        android:textSize="20sp"
-        android:textColor="#000000"/>
+  <LinearLayout
+      android:id="@+id/details_layout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_marginStart="5dp"
+      android:layout_marginTop="50dp"
+      app:layout_constraintStart_toEndOf="@id/profile_icon"
+      app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="johndoe@gmail.com"
-        android:textSize="20sp"
-        android:textColor="#000000"/>
+      <TextView
+          android:id="@+id/username_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="John Doe"
+          android:textSize="20sp"
+          android:textColor="@color/white"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Wallet: $1000.00"
-        android:textSize="20sp"
-        android:textColor="#000000"/>
+      <TextView
+          android:id="@+id/wallet_balance"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="$100.00"
+          android:textSize="15sp"
+          android:textColor="@color/white"/>
 
-</LinearLayout>
+
+  </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

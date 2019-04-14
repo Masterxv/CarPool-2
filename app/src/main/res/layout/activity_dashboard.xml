@@ -7,58 +7,11 @@
     android:fitsSystemWindows="true"
     android:background="@color/white">
 
-    <android.support.constraint.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/set_location_box"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#cc101010"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/map_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="30dp"
-            android:orientation="vertical">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Set Pick Up Zone"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
-                android:inputType="text"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:textColor="@color/white"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Set Drop Off Zone"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
-                android:inputType="text"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/roundbutton_two"
-                android:text="FIND DRIVER"
-                android:textColor="@color/white"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
-
-        <FrameLayout
-            android:id="@+id/map_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -67,22 +20,117 @@
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".DashboardActivity" />
+                tools:context=".activities.DashboardActivity" />
 
-            <Button
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:elevation="10dp"
+            android:background="@drawable/white_border"
+            android:id="@+id/relative_layout">
+            
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/ic_search_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_search"/>
+
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom"
-                android:text="REQUEST CARPOOL"
-                android:textColor="@color/white"
-                android:textStyle="bold"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/ic_search_icon"
+                android:layout_centerVertical="true"
                 android:textSize="20sp"
-                android:background="@drawable/roundbutton_two"/>
+                android:textColor="#000000"
+                android:textColorHighlight="@color/white"
+                android:id="@+id/set_pick_up"
+                android:hint="Set Pick Up Location"
+                android:textColorHint="#000000"
+                android:imeOptions="actionDone" />
 
-        </FrameLayout>
 
 
-    </android.support.constraint.ConstraintLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:elevation="10dp"
+            android:layout_below="@id/relative_layout"
+            android:background="@drawable/white_border"
+            android:id="@+id/relative_layout_two">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/ic_search_icon_two"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_search"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/ic_search_icon_two"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/white"
+                android:id="@+id/set_drop_off"
+                android:hint="Set Drop Off Location"
+                android:textColorHint="#000000"
+                android:imeOptions="actionSearch"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:elevation="10dp"
+            android:layout_below="@id/relative_layout_two"
+            android:background="@drawable/white_border"
+            android:id="@+id/relative_layout_three"
+            android:clickable="true"
+            android:onClick="testMethod">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FIND A DRIVER"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:onClick="testMethod"/>
+
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/relative_layout_three"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_location"
+            android:clickable="true"
+            android:onClick="getCurrentLocation"/>
+
+    </RelativeLayout>
 
 
     <android.support.design.widget.NavigationView
