@@ -7,6 +7,8 @@
     android:background="#000000"
     tools:context=".activities.LoginSelectorActivity">
 
+
+
     <Button
         android:layout_width="200dp"
         android:layout_height="50dp"
@@ -27,22 +29,22 @@
         android:onClick="onClickPassenger"/>
 
     <Button
+        android:id="@+id/driver_button"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="Driver Login"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:id="@+id/driver_button"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="250dp"
         android:background="@drawable/roundbutton_two"
         android:elevation="10dp"
-        app:layout_constraintTop_toBottomOf="@id/passenger_button"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="100dp"
+        android:onClick="onClickDriver"
+        android:text="Driver Login"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="250dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="110dp"
-        android:onClick="onClickDriver"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passenger_button" />
 
 </android.support.constraint.ConstraintLayout>

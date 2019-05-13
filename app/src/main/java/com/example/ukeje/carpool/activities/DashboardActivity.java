@@ -127,6 +127,7 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
 
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
+                        onOptionsItemSelected(menuItem);
 
                         return true;
                     }
@@ -175,6 +176,10 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
         switch (item.getItemId()) {
             case android.R.id.home:
                 dashDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            case R.id.edit_profile:
+                Intent intent = new Intent(getApplicationContext(),EditProfileActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);
